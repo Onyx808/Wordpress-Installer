@@ -21,6 +21,8 @@ else
 echo "============================================"
 echo "A robot is now installing WordPress for you."
 echo "============================================"
+#move to webroot
+cd /var/www/html
 #download wordpress
 curl -O https://wordpress.org/latest.tar.gz
 #unzip wordpress
