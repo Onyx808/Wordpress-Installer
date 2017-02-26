@@ -36,14 +36,21 @@ cd wordpress
 #remove files from wordpress folder
 #rm -R wordpress
 #create wp config
+echo "============================================"
+echo "Editing wp-config.php file."
+echo "============================================"
 cp wp-config-sample.php wp-config.php
 #set database details with perl find and replace
 perl -pi -e "s/database_name_here/$dbname/g" wp-config.php
 perl -pi -e "s/username_here/$dbuser/g" wp-config.php
 perl -pi -e "s/password_here/$dbpass/g" wp-config.php
 perl -pi -e "s/wp_/$table_prefix/g" wp-config.php
-perl -pi -e "s/define('WP_DEBUG', false);/define('WP_DEBUG', false);\n define( 'WP_AUTO_UPDATE_CORE', true ); \n /g" wp-config.php
 
+perl -pi -e 'print "define( 'WP_AUTO_UPDATE_CORE', true );" if $. == 81' wp-config.php
+perl -pi -e 'print "define('WP_POST_REVISIONS', false );" if $. == 82' wp-config.php
+perl -pi -e 'print "define('FS_METHOD', 'direct');" if $. == 83' wp-config.php
+perl -pi -e 'print "define('AUTOSAVE_INTERVAL', 240 );" if $. == 84' wp-config.php
+perl -pi -e 'print "define('DISALLOW_FILE_EDIT',true);" if $. == 85' wp-config.php
 #set WP salts
 perl -i -pe'
   BEGIN {
