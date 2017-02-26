@@ -53,7 +53,7 @@ perl -pi -e 'print "define('AUTOSAVE_INTERVAL', 240 ); \n" if $. == 84' wp-confi
 perl -pi -e 'print "define('DISALLOW_FILE_EDIT',true); \n" if $. == 85' wp-config.php
 
 
-perl -pi -e "s/WP_AUTO_UPDATE_CORE/'WP_AUTO_UPDATE_CORE'/g" wp-config.php
+perl -pi -e "s/WP_AUTO_UPDATE_CORE/\'WP_AUTO_UPDATE_CORE\'/g" wp-config.php
 #set WP salts
 perl -i -pe'
   BEGIN {
