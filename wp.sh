@@ -42,6 +42,7 @@ perl -pi -e "s/database_name_here/$dbname/g" wp-config.php
 perl -pi -e "s/username_here/$dbuser/g" wp-config.php
 perl -pi -e "s/password_here/$dbpass/g" wp-config.php
 perl -pi -e "s/wp_/$table_prefix/g" wp-config.php
+perl -pi -e "s/define('WP_DEBUG', false);/define('WP_DEBUG', false);\n define( 'WP_AUTO_UPDATE_CORE', true ); \n /g" wp-config.php
 
 #set WP salts
 perl -i -pe'
