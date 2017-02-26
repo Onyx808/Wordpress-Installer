@@ -9,6 +9,8 @@ echo "Database Name: "
 read -e dbname
 echo "Database User: "
 read -e dbuser
+echo "Table Prefix: "
+read -e table_prefix
 echo "Database Password: "
 read -s dbpass
 echo "run install? (y/n)"
@@ -37,6 +39,7 @@ cp wp-config-sample.php wp-config.php
 perl -pi -e "s/database_name_here/$dbname/g" wp-config.php
 perl -pi -e "s/username_here/$dbuser/g" wp-config.php
 perl -pi -e "s/password_here/$dbpass/g" wp-config.php
+perl -pi -e "s/wp_/$table_prefix/g" wp-config.php
 
 #set WP salts
 perl -i -pe'
@@ -62,7 +65,7 @@ sudo chown -R www-data:www-data $projectname
 echo "========================="
 echo "creating database."
 echo "========================="
-echo "create database $dbname" | mysql --user=$dbuser --password=$dbpass
+echo "create database $dbname" | mysql --login-path=$dbuser
 echo "========================="
 echo "Installation is complete."
 echo "========================="
