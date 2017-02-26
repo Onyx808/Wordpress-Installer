@@ -7,10 +7,10 @@ echo "Project Name: "
 read -e projectname
 echo "Database Name: "
 read -e dbname
-echo "Database User: "
-read -e dbuser
 echo "Table Prefix: "
 read -e table_prefix
+echo "Database User: "
+read -e dbuser
 echo "Database Password: "
 read -s dbpass
 echo "run install? (y/n)"
