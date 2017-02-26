@@ -57,7 +57,7 @@ cd ..
 rm latest.tar.gz
 #remove bash script
 mv wordpress $projectname
-sudo chown -R _www:_www $projectname
+sudo chown -R www-data:www-data $projectname
 #rm wp.sh
 echo "========================="
 echo "creating database."
