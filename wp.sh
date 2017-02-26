@@ -46,11 +46,11 @@ perl -pi -e "s/username_here/$dbuser/g" wp-config.php
 perl -pi -e "s/password_here/$dbpass/g" wp-config.php
 perl -pi -e "s/wp_/$table_prefix/g" wp-config.php
 
-perl -pi -e 'print "define( 'WP_AUTO_UPDATE_CORE', true );" if $. == 81' wp-config.php
-perl -pi -e 'print "define('WP_POST_REVISIONS', false );" if $. == 82' wp-config.php
-perl -pi -e 'print "define('FS_METHOD', 'direct');" if $. == 83' wp-config.php
-perl -pi -e 'print "define('AUTOSAVE_INTERVAL', 240 );" if $. == 84' wp-config.php
-perl -pi -e 'print "define('DISALLOW_FILE_EDIT',true);" if $. == 85' wp-config.php
+perl -pi -e 'print "define( 'WP_AUTO_UPDATE_CORE', true ); \n" if $. == 81' wp-config.php
+perl -pi -e 'print "define('WP_POST_REVISIONS', false ); \n" if $. == 82' wp-config.php
+perl -pi -e 'print "define('FS_METHOD', 'direct'); \n" if $. == 83' wp-config.php
+perl -pi -e 'print "define('AUTOSAVE_INTERVAL', 240 ); \n" if $. == 84' wp-config.php
+perl -pi -e 'print "define('DISALLOW_FILE_EDIT',true); \n" if $. == 85' wp-config.php
 #set WP salts
 perl -i -pe'
   BEGIN {
