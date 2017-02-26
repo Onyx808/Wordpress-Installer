@@ -54,6 +54,11 @@ perl -pi -e 'print "define('DISALLOW_FILE_EDIT',true); \n" if $. == 85' wp-confi
 
 
 perl -pi -e "s/WP_AUTO_UPDATE_CORE/\'WP_AUTO_UPDATE_CORE\'/g" wp-config.php
+perl -pi -e "s/WP_POST_REVISIONS/\'WP_POST_REVISIONS\'/g" wp-config.php
+perl -pi -e "s/FS_METHOD/\'FS_METHOD\'/g" wp-config.php
+perl -pi -e "s/direct/\'direct\'/g" wp-config.php
+perl -pi -e "s/AUTOSAVE_INTERVAL/\'AUTOSAVE_INTERVAL\'/g" wp-config.php
+perl -pi -e "s/DISALLOW_FILE_EDIT/\'DISALLOW_FILE_EDIT\'/g" wp-config.php
 #set WP salts
 perl -i -pe'
   BEGIN {
