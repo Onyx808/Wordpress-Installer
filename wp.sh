@@ -71,6 +71,7 @@ perl -i -pe'
 
 #create uploads folder and set permissions
 mkdir wp-content/uploads
+rm wp-config-sample.php
 echo "Cleaning..."
 #remove zip file
 cd ..
