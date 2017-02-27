@@ -71,15 +71,16 @@ perl -i -pe'
 
 #create uploads folder and set permissions
 mkdir wp-content/uploads
-chmod 775 wp-content/uploads
 echo "Cleaning..."
 #remove zip file
 cd ..
 rm latest.tar.gz
-#remove bash script
+
 mv wordpress $projectname
 sudo chown -R www-data:www-data $projectname
-#rm wp.sh
+sudo find $projectname -type d -exec chmod 755 {} \;
+sudo find $projectname -type f -exec chmod 644 {} \;
+
 echo "========================="
 echo "creating database."
 echo "========================="
