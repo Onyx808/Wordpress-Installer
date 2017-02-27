@@ -39,7 +39,7 @@ cd wordpress
 echo "============================================"
 echo "Editing wp-config.php file."
 echo "============================================"
-cp wp-config-sample.php wp-config.php
+mv wp-config-sample.php wp-config.php
 #set database details with perl find and replace
 perl -pi -e "s/database_name_here/$dbname/g" wp-config.php
 perl -pi -e "s/username_here/$dbuser/g" wp-config.php
@@ -71,7 +71,6 @@ perl -i -pe'
 
 #create uploads folder and set permissions
 mkdir wp-content/uploads
-rm wp-config-sample.php
 echo "Cleaning..."
 #remove zip file
 cd ..
