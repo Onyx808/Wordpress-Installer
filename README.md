@@ -18,5 +18,9 @@ Clone this script and then move it to /usr/local/bin
 
 `mv Wordpress-Installer/wp.sh /usr/local/bin/`
 
+Edit line 25 and point it to your webroot
+
+`cd /your/path/to/webroot`
+
 Then ran the command **wp.sh** and follow the instructions on screen, have your database username and password handy.
 Enjoy!
